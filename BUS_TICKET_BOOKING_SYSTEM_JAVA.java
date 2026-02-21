@@ -125,32 +125,39 @@ class java_main{
         }
     }
 }
+
+
+
 class bus_data{
-    HashMap<String,account> data =new HashMap<>();
-    void sign_up(){
+    HashMap<String,methods> data =new HashMap<>();
+    // void sign_up(){
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Username: ");
-        String name = sc.nextLine();
+    //     Scanner sc = new Scanner(System.in);
+    //     System.out.println("Enter Username: ");
+    //     String name = sc.nextLine();
 
-        System.out.println("Enter Password: ");
-        String passkey = sc.nextLine();
+    //     System.out.println("Enter Password: ");
+    //     String passkey = sc.nextLine();
 
-        System.out.println("Enter Initial Balance: ");
-        int balance = sc.nextInt();
+    //     System.out.println("Enter Initial Balance: ");
+    //     int balance = sc.nextInt();
 
-        System.out.println("Set a 4-digit PIN:");
-        int pin = sc.nextInt();
+    //     System.out.println("Set a 4-digit PIN:");
+    //     int pin = sc.nextInt();
 
-        if (pin >= 0000 && pin > 9999 ){
-            System.out.println("---------");
-        }
+    //     if (pin >= 0000 && pin > 9999 ){
+    //         System.out.println("---------");
+    //     }
 
-        System.out.println("ACCOUNT NUMBER: ");
-        int acc_num = sc.nextInt();
+    //     System.out.println("ACCOUNT NUMBER: ");
+    //     int acc_num = sc.nextInt();
 
-        details.put(name,new account(acc_num,name,pin,passkey,balance));
-    }
+    //     details.put(name,new account(acc_num,name,pin,passkey,balance));
+    // }
+
+
+
+    
     void login(){
 
         Scanner sc = new Scanner(System.in);
@@ -214,7 +221,7 @@ class bus_data{
     }
 }
 
-class account extends bank{
+class methods extends bus_data{
     Integer account_number;
     String user_name;
     Integer PIN;
@@ -292,26 +299,29 @@ class account extends bank{
 
 
 
-view_buses_Schedules(){
-    System.out.println("--- Available Bus Schedules ---");
-    System.out.println("1: north nazimabad - power house"
-    +"\nTime: 09:00 AM"
-    +"\nPKR: 500\n"
-    +"\n2: kda - gulshan"
-    +"\nTime: 12:00 PM"
-    +"\nPKR: 70\n"
-    +"\n3: ayesha manzil - bahria"
-    +"\nTime: 05:00 PM"
-    +"\nPKR: 600");
-    }
+// view_buses_Schedules(){
+//     System.out.println("--- Available Bus Schedules ---");
+//     System.out.println("1: north nazimabad - power house"
+//     +"\nTime: 09:00 AM"
+//     +"\nPKR: 500\n"
+//     +"\n2: kda - gulshan"
+//     +"\nTime: 12:00 PM"
+//     +"\nPKR: 70\n"
+//     +"\n3: ayesha manzil - bahria"
+//     +"\nTime: 05:00 PM"
+//     +"\nPKR: 600");
+//     }
 
+void ticket_booking(){
+    // view_buses()
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Enter Schedules ID: ");
+    Integer booking_id = sc.nextInt();
 
-# Function to book a ticket
-def book_ticket():
-    view_buses()
-    bus_id = int(input("Enter Bus ID to book: "))
-    
-    if bus_id in buses and buses[bus_id][3] > 0:
+    System.out.println("Enter your name: ");
+    String customer_name = sc.nextLine();
+
+    if 
         name = input("Enter your name: ")
         seats = int(input("Enter number of seats: "))
         
