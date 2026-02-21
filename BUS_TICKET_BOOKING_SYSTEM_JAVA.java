@@ -129,7 +129,11 @@ class java_main{
 
 
 class bus_data{
-    HashMap<String,methods> data =new HashMap<>();
+    HashMap<String,methods> data = new HashMap<>();
+    
+    f"ID: {bus_id} | Route: {route} | Time: {time} | Fare: {fare} | Seats Left: {seats}"
+    
+    
     // void sign_up(){
 
     //     Scanner sc = new Scanner(System.in);
@@ -155,86 +159,30 @@ class bus_data{
     //     details.put(name,new account(acc_num,name,pin,passkey,balance));
     // }
 
-
-
-    
-    void login(){
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Username: ");
-        String name = sc.nextLine();
-
-        System.out.println("Enter PIN: ");
-        String pin = sc.nextLine();
-
-        account acc = details.get(name);
-        if (acc.details.containsKey(name) == true){
-            System.out.println("Login Successful!");
-        }
-
-        while (true){
-            System.out.println("Banking Menu:\n" +
-                    "1. Deposit Money\n" +
-                    "2. Withdraw Money\n" +
-                    "3. Check Balance\n" +
-                    "4. Transaction History !\n" +
-                    "5. Transfer Money");
-
-            System.out.println("Enter your choice: ");
-            Integer choice = sc.nextInt();
-
-            switch(choice){
-                case 1:
-                    acc.deposit();
-                    break;
-                case 2:
-                    acc.withdraw();
-                    break;
-                case 3:
-                    acc.display_info();
-                    break;
-                case 4:
-                    System.out.println("Transfer History");
-                    break;
-                case 5:
-                    Scanner sc = new Scanner (System.in);
-                    System.out.println("Enter account name: ");
-                    String acc_name = sc.nextLine();
-                    if (acc.details.containsKey(acc_name) == true){
-                    acc.transfer_money();
-                    }
-                    else{
-                        System.out.println("Account not available.
-                        ");
-                    }
-                    break;
-            }
-
-            System.out.println("Do you want to Logout (yes/no)?");
-            String exit = sc.nextLine();
-
-            if (exit.equals("yes")){
-                System.out.println("Logout successful!");
-                break;
-            }
-        }
-    }
-}
-
 class methods extends bus_data{
-    Integer account_number;
-    String user_name;
-    Integer PIN;
-    String password;
-    Integer balance;
-
-    account(Integer account_number,String user_name,Integer PIN,String password,Integer balance){
-        this.balance = balance;
-        this.account_number = account_number;
-        this.PIN = PIN;
-        this.password = password;
-        this.user_name = user_name;
+    String customer_name;
+    Integer ID;
+    
+    methods(String customer_name,Integer ID){
+        this.customer_name = customer_name;
+        this.ID = ID;
     }
+
+    void view_buses_Schedules(){
+        System.out.println("--- Available Bus Schedules ---");
+        System.out.println("1: north nazimabad - power house"
+        +"\nTime: 09:00 AM"
+        +"\nPKR: 500\n"
+        +"\n2: kda - gulshan"
+        +"\nTime: 12:00 PM"
+        +"\nPKR: 70\n"
+        +"\n3: ayesha manzil - bahria"
+        +"\nTime: 05:00 PM"
+        +"\nPKR: 600");
+    }
+
+
+
 
     void display_info(){
         System.out.println("Balance: "+this.balance+
