@@ -93,3 +93,267 @@
 
 
 import java.util.*;
+
+
+
+
+
+import java.util.*;
+import java.time.*;
+
+class java_main{
+    public static void main(String[] args){
+        bank b1 = new bank();
+        while (true) {
+            System.out.println("1.Signup\n2.Login");
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Choose an option");
+            Integer op = sc.nextInt();
+            switch(op){
+                case 1:
+                    b1.sign_up();
+                    break;
+                case 2:
+                    b1.login();
+                    break;
+            }
+            Scanner choice = new Scanner(System.in);
+            System.out.println("Do you want to continue (yes/no)?");
+            if (op.equals("No")){
+                break;
+            }
+        }
+    }
+}
+class bus_data{
+    HashMap<String,account> data =new HashMap<>();
+    void sign_up(){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Username: ");
+        String name = sc.nextLine();
+
+        System.out.println("Enter Password: ");
+        String passkey = sc.nextLine();
+
+        System.out.println("Enter Initial Balance: ");
+        int balance = sc.nextInt();
+
+        System.out.println("Set a 4-digit PIN:");
+        int pin = sc.nextInt();
+
+        if (pin >= 0000 && pin > 9999 ){
+            System.out.println("---------");
+        }
+
+        System.out.println("ACCOUNT NUMBER: ");
+        int acc_num = sc.nextInt();
+
+        details.put(name,new account(acc_num,name,pin,passkey,balance));
+    }
+    void login(){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Username: ");
+        String name = sc.nextLine();
+
+        System.out.println("Enter PIN: ");
+        String pin = sc.nextLine();
+
+        account acc = details.get(name);
+        if (acc.details.containsKey(name) == true){
+            System.out.println("Login Successful!");
+        }
+
+        while (true){
+            System.out.println("Banking Menu:\n" +
+                    "1. Deposit Money\n" +
+                    "2. Withdraw Money\n" +
+                    "3. Check Balance\n" +
+                    "4. Transaction History !\n" +
+                    "5. Transfer Money");
+
+            System.out.println("Enter your choice: ");
+            Integer choice = sc.nextInt();
+
+            switch(choice){
+                case 1:
+                    acc.deposit();
+                    break;
+                case 2:
+                    acc.withdraw();
+                    break;
+                case 3:
+                    acc.display_info();
+                    break;
+                case 4:
+                    System.out.println("Transfer History");
+                    break;
+                case 5:
+                    Scanner sc = new Scanner (System.in);
+                    System.out.println("Enter account name: ");
+                    String acc_name = sc.nextLine();
+                    if (acc.details.containsKey(acc_name) == true){
+                    acc.transfer_money();
+                    }
+                    else{
+                        System.out.println("Account not available.
+                        ");
+                    }
+                    break;
+            }
+
+            System.out.println("Do you want to Logout (yes/no)?");
+            String exit = sc.nextLine();
+
+            if (exit.equals("yes")){
+                System.out.println("Logout successful!");
+                break;
+            }
+        }
+    }
+}
+
+class account extends bank{
+    Integer account_number;
+    String user_name;
+    Integer PIN;
+    String password;
+    Integer balance;
+
+    account(Integer account_number,String user_name,Integer PIN,String password,Integer balance){
+        this.balance = balance;
+        this.account_number = account_number;
+        this.PIN = PIN;
+        this.password = password;
+        this.user_name = user_name;
+    }
+
+    void display_info(){
+        System.out.println("Balance: "+this.balance+
+                "\nAccount Number: "+this.account_number+
+                "\nPIN: "+this.PIN +
+                "\nPassword: "+this.password+
+                "\nName: "+this.user_name);
+    }
+
+    void deposit(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter deposit amount:");
+        int am = sc.nextInt();
+        this.balance+=am;
+    }
+
+    void withdraw(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the amount you want to withdraw:");
+        int am = sc.nextInt();
+
+        if (am<=balance){
+            this.balance-=am;
+            System.out.println("Withdraw complete");
+        }
+    }
+
+// Icomplete ----->
+
+    void transfer_money(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the ammount you want to tansfer: ");
+        Integer amount = sc.nextInt();
+
+        if (amount<=balance){
+            this.balance-=amount;
+
+            System.out.println("Transfered!");
+        }
+        else{
+            System.out.println("Insufficient Funds");
+
+            //         String acc_name = sc.nextLine();
+            //         if (acc.details.containsKey(acc_name) == true){
+            //         acc.transfer_money();
+        
+        }
+    }
+}
+
+
+
+
+// print("0. Exit")
+//     print("1. View Bus Schedules")
+//     print("2. Book Ticket")
+//     print("3. Cancel Booking")
+//     print("4. View My Bookings")
+
+
+
+
+
+
+view_buses_Schedules(){
+    System.out.println("--- Available Bus Schedules ---");
+    System.out.println("1: north nazimabad - power house"
+    +"\nTime: 09:00 AM"
+    +"\nPKR: 500\n"
+    +"\n2: kda - gulshan"
+    +"\nTime: 12:00 PM"
+    +"\nPKR: 70\n"
+    +"\n3: ayesha manzil - bahria"
+    +"\nTime: 05:00 PM"
+    +"\nPKR: 600");
+    }
+
+
+# Function to book a ticket
+def book_ticket():
+    view_buses()
+    bus_id = int(input("Enter Bus ID to book: "))
+    
+    if bus_id in buses and buses[bus_id][3] > 0:
+        name = input("Enter your name: ")
+        seats = int(input("Enter number of seats: "))
+        
+        if seats <= buses[bus_id][3]:  # Check available seats
+            total_fare = seats * buses[bus_id][2]  # fare = seats × price per seat
+            bookings.append({"name": name, "bus_id": bus_id, "seats": seats, "total_fare": total_fare})
+            # Update available seats
+            route, time, fare, available = buses[bus_id]
+            buses[bus_id] = (route, time, fare, available - seats)
+            print(f"Booking successful! Total Fare: {total_fare}\n")
+        else:
+            print("Not enough seats available.\n")
+    else:
+        print("Invalid Bus ID or no seats available.\n")
+
+
+# Function to cancel a booking
+def cancel_booking():
+    name = input("Enter your name to cancel booking: ")
+    for booking in bookings:
+        if booking["name"].lower() == name.lower():
+            bus_id = booking["bus_id"]
+            seats = booking["seats"]
+            # Restore seats
+            route, time, fare, available = buses[bus_id]
+            buses[bus_id] = (route, time, fare, available + seats)
+            bookings.remove(booking)
+            print("Booking cancelled successfully!\n")
+            return
+    print("Booking not found.\n")
+
+
+# Function to view all bookings
+def view_bookings():
+    if not bookings:
+        print("No bookings yet.\n")
+    else:
+        print("\n--- Booked Tickets ---")
+        for b in bookings:
+            route, time, fare, _ = buses[b["bus_id"]]
+            print(f"Name: {b['name']}, Route: {route}, Time: {time}, Seats: {b['seats']}, Total Fare: {b['total_fare']}")
+        print()
+
+
+    
