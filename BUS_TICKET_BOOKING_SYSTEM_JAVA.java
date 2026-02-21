@@ -103,7 +103,7 @@ class java_main{
 //     print("4. View My Bookings")
     
     public static void main(String[] args){
-        methods m1 = new methods();
+        methods m1 = new methods("j",5);
         while (true) {
             System.out.println("1. View Bus Schedules\n"
             +"2. Book Ticket"
@@ -118,6 +118,7 @@ class java_main{
                     m1.view_buses_Schedules();
                     break;
                 case 2:
+                    m1.view_buses_Schedules();
                     m1.ticket_booking();
                     break;
                 case 3:
