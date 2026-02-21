@@ -108,18 +108,17 @@ class java_main{
             System.out.println("1. View Bus Schedules\n"
             +"2. Book Ticket"
             +"\n3. Cancel Booking"
-            +"\n4. View My Bookings"
-            +"\n5. Exit");
+            +"\n4. View My Bookings");
 
             Scanner sc = new Scanner(System.in);
             System.out.println("Choose an option");
             Integer op = sc.nextInt();
             switch(op){
                 case 1:
-                    m1.cancel_booking();
+                    m1.view_buses_Schedules();
                     break;
                 case 2:
-                    m1.display_info();
+                    m1.ticket_booking();
                     break;
                 case 3:
                     m1.cancel_booking();
@@ -127,10 +126,6 @@ class java_main{
                 case 4:
                     m1.display_info();
                     break;
-                case 5:
-                    m1.display_info();
-                    break;
-            
             }
             Scanner choice = new Scanner(System.in);
             System.out.println("Do you want to continue (yes/no)?");
