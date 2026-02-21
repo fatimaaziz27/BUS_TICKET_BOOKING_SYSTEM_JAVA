@@ -95,27 +95,49 @@
 import java.util.*;
 
 class java_main{
+
+    //     print("0. Exit")
+//     print("1. View Bus Schedules")
+//     print("2. Book Ticket")
+//     print("3. Cancel Booking")
+//     print("4. View My Bookings")
+    
     public static void main(String[] args){
-        // bank b1 = new bank();
-        // while (true) {
-        //     System.out.println("1.Signup\n2.Login");
-        //     Scanner sc = new Scanner(System.in);
-        //     System.out.println("Choose an option");
-        //     Integer op = sc.nextInt();
-        //     switch(op){
-        //         case 1:
-        //             b1.sign_up();
-        //             break;
-        //         case 2:
-        //             b1.login();
-        //             break;
-        //     }
-        //     Scanner choice = new Scanner(System.in);
-        //     System.out.println("Do you want to continue (yes/no)?");
-        //     if (op.equals("No")){
-        //         break;
-        //     }
-        // }
+        methods m1 = new methods();
+        while (true) {
+            System.out.println("1. View Bus Schedules\n"
+            +"2. Book Ticket"
+            +"\n3. Cancel Booking"
+            +"\n4. View My Bookings"
+            +"\n5. Exit");
+
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Choose an option");
+            Integer op = sc.nextInt();
+            switch(op){
+                case 1:
+                    m1.cancel_booking();
+                    break;
+                case 2:
+                    m1.display_info();
+                    break;
+                case 3:
+                    m1.cancel_booking();
+                    break;
+                case 4:
+                    m1.display_info();
+                    break;
+                case 5:
+                    m1.display_info();
+                    break;
+            
+            }
+            Scanner choice = new Scanner(System.in);
+            System.out.println("Do you want to continue (yes/no)?");
+            if (op.equals("No")){
+                break;
+            }
+        }
     }
 }
 
@@ -123,8 +145,7 @@ class java_main{
 
 class bus_data{
     HashMap<String,methods> data = new HashMap<>();
-
-    //     details.put(name,new account(acc_num,name,pin,passkey,balance))
+}
 
 class methods extends bus_data{
     String customer_name;
@@ -152,8 +173,6 @@ class methods extends bus_data{
 
     void ticket_booking(){
 
-        // view_buses()
-        
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter Schedules ID: ");
         Integer booking_id = sc.nextInt();
@@ -161,7 +180,7 @@ class methods extends bus_data{
         System.out.println("Enter your name: ");
         String cus_name = sc.nextLine();
 
-        data.put(cus_name,new customer(cus_name,booking_id));
+        data.put(cus_name,new data(cus_name,booking_id));
 
     }
 
@@ -179,74 +198,8 @@ class methods extends bus_data{
         System.out.println("Enter your name: ");
         String cus_name = sc.nextLine();
         if (data.containsKey(cus_name) == true){
-        
+            System.out.println("hehe");
         }
     }
+}
 
-
-
-
-
-// print("0. Exit")
-//     print("1. View Bus Schedules")
-//     print("2. Book Ticket")
-//     print("3. Cancel Booking")
-//     print("4. View My Bookings")
-
-
-
-void ticket_booking(){
-    // view_buses()
-    Scanner sc = new Scanner (System.in);
-    System.out.println("Enter Schedules ID: ");
-    Integer booking_id = sc.nextInt();
-
-    System.out.println("Enter your name: ");
-    String customer_name = sc.nextLine();
-
-    if 
-        name = input("Enter your name: ")
-        seats = int(input("Enter number of seats: "))
-        
-        if seats <= buses[bus_id][3]:  # Check available seats
-            total_fare = seats * buses[bus_id][2]  # fare = seats × price per seat
-            bookings.append({"name": name, "bus_id": bus_id, "seats": seats, "total_fare": total_fare})
-            # Update available seats
-            route, time, fare, available = buses[bus_id]
-            buses[bus_id] = (route, time, fare, available - seats)
-            print(f"Booking successful! Total Fare: {total_fare}\n")
-        else:
-            print("Not enough seats available.\n")
-    else:
-        print("Invalid Bus ID or no seats available.\n")
-
-
-# Function to cancel a booking
-def cancel_booking():
-    name = input("Enter your name to cancel booking: ")
-    for booking in bookings:
-        if booking["name"].lower() == name.lower():
-            bus_id = booking["bus_id"]
-            seats = booking["seats"]
-            # Restore seats
-            route, time, fare, available = buses[bus_id]
-            buses[bus_id] = (route, time, fare, available + seats)
-            bookings.remove(booking)
-            print("Booking cancelled successfully!\n")
-            return
-    print("Booking not found.\n")
-
-
-# Function to view all bookings
-def view_bookings():
-    if not bookings:
-        print("No bookings yet.\n")
-    else:
-        print("\n--- Booked Tickets ---")
-        for b in bookings:
-            route, time, fare, _ = buses[b["bus_id"]]
-            print(f"Name: {b['name']}, Route: {route}, Time: {time}, Seats: {b['seats']}, Total Fare: {b['total_fare']}")
-        print()
-
-
-    
