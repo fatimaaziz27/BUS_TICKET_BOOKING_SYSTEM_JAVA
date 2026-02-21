@@ -175,53 +175,14 @@ class methods extends bus_data{
     }
 
     void display_info(){
-        System.out.println("Balance: "+this.balance+
-                "\nAccount Number: "+this.account_number+
-                "\nPIN: "+this.PIN +
-                "\nPassword: "+this.password+
-                "\nName: "+this.user_name);
-    }
-
-    void deposit(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter deposit amount:");
-        int am = sc.nextInt();
-        this.balance+=am;
-    }
-
-    void withdraw(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the amount you want to withdraw:");
-        int am = sc.nextInt();
-
-        if (am<=balance){
-            this.balance-=am;
-            System.out.println("Withdraw complete");
-        }
-    }
-
-// Icomplete ----->
-
-    void transfer_money(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the ammount you want to tansfer: ");
-        Integer amount = sc.nextInt();
-
-        if (amount<=balance){
-            this.balance-=amount;
-
-            System.out.println("Transfered!");
-        }
-        else{
-            System.out.println("Insufficient Funds");
-
-            //         String acc_name = sc.nextLine();
-            //         if (acc.details.containsKey(acc_name) == true){
-            //         acc.transfer_money();
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Enter your name: ");
+        String cus_name = sc.nextLine();
+        if (data.containsKey(cus_name) == true){
         
         }
     }
-}
+
 
 
 
