@@ -101,17 +101,10 @@ class java_main{
 }
 
 class bus_data{
+
     HashMap<String,methods> data = new HashMap<>();
 
 }
-
-
-
-
-
-
-
-
 
 class methods extends bus_data{
 
@@ -123,7 +116,7 @@ class methods extends bus_data{
     Integer seats;
     Integer total_fare;
 
-//  constructor ------>    
+//  constructor ------>
 
     methods(String name,String route,String time,Integer seats,Integer fare){
         this.customer_name = name;
