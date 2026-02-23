@@ -1,14 +1,71 @@
 import java.util.*;
 class java_main{
 
-//     print("0. Exit")
-//     print("1. View Bus Schedules")
-//     print("2. Book Ticket")
-//     print("3. Cancel Booking")
-//     print("4. View My Bookings")
-    
+
+// 0. Exit
+// 1. View Bus Schedules
+// 2. Book Ticket
+// 3. Cancel Booking
+// 4. View My Bookings
+// Enter your choice: 1
+
+// --- Available Bus Schedules ---
+// ID: 1 | Route: north nazimabad - power house | Time: 09:00 AM | Fare: 500 | Seats Left: 30
+// ID: 2 | Route: kda - gulshan | Time: 12:00 PM | Fare: 700 | Seats Left: 30
+// ID: 3 | Route: ayesha manzil - bahria | Time: 05:00 PM | Fare: 600 | Seats Left: 30
+
+// 0. Exit
+// 1. View Bus Schedules
+// 2. Book Ticket
+// 3. Cancel Booking
+// 4. View My Bookings
+// Enter your choice: 2
+
+// --- Available Bus Schedules ---
+// ID: 1 | Route: north nazimabad - power house | Time: 09:00 AM | Fare: 500 | Seats Left: 30
+// ID: 2 | Route: kda - gulshan | Time: 12:00 PM | Fare: 700 | Seats Left: 30
+// ID: 3 | Route: ayesha manzil - bahria | Time: 05:00 PM | Fare: 600 | Seats Left: 30
+
+// Enter Bus ID to book: 2
+// Enter your name: yusra
+// Enter number of seats: 3
+// Booking successful! Total Fare: 2100
+
+// 0. Exit
+// 1. View Bus Schedules
+// 2. Book Ticket
+// 3. Cancel Booking
+// 4. View My Bookings
+// Enter your choice: 4
+
+// --- Booked Tickets ---
+// Name: yusra, Route: kda - gulshan, Time: 12:00 PM, Seats: 3, Total Fare: 2100
+
+// 0. Exit
+// 1. View Bus Schedules
+// 2. Book Ticket
+// 3. Cancel Booking
+// 4. View My Bookings
+// Enter your choice: 3
+// Enter your name to cancel booking: yusra
+// Booking cancelled successfully!
+
+// 0. Exit
+// 1. View Bus Schedules
+// 2. Book Ticket
+// 3. Cancel Booking
+// 4. View My Bookings
+// Enter your choice: 0
+// Exiting Bus Ticket Booking System...
+
+// === Code Execution Successful ===
+
     public static void main(String[] args){
-        methods m1 = new methods("j",5);
+
+        methods m1 = new methods ("a","b",5,3,78);
+
+    //  Enter your choice:
+
         while (true) {
             System.out.println("1. View Bus Schedules\n"
             +"2. Book Ticket"
@@ -44,32 +101,53 @@ class java_main{
 
 class bus_data{
     HashMap<String,methods> data = new HashMap<>();
+
 }
 
+
+
+
+
+
+
+
+
 class methods extends bus_data{
+
+    //  Attributes ------>
+
     String customer_name;
-    Integer ID;
-    
-    methods(String customer_name,Integer ID){
-        this.customer_name = customer_name;
-        this.ID = ID;
+    String route;
+    String time;
+    Integer seats;
+    Integer total_fare;
+
+//  constructor ------>    
+
+    methods(String name,String route,String time,Integer seats,Integer fare){
+        this.customer_name = name;
+        this.route = route;
+        this.seats = seats;
+        this.time = time;
+        this.total_fare = fare;
     }
+
+//  1. View Bus Schedules
 
     void view_buses_Schedules(){
-        System.out.println("--- Available Bus Schedules ---");
-        System.out.println("1: north nazimabad - power house"
-        +"\nTime: 09:00 AM"
-        +"\nPKR: 500\n"
-        +"\n2: kda - gulshan"
-        +"\nTime: 12:00 PM"
-        +"\nPKR: 70\n"
-        +"\n3: ayesha manzil - bahria"
-        +"\nTime: 05:00 PM"
-        +"\nPKR: 600");
+        
+        // Incomplete --------->
+        
+        System.out.println("--- Available Bus Schedules ---"
+        +"ID: 1 | Route: north nazimabad - power house | Time: 09:00 AM | Fare: 500 | Seats Left: 30"
+        +"ID: 2 | Route: kda - gulshan | Time: 12:00 PM | Fare: 700 | Seats Left: 30"
+        +"ID: 3 | Route: ayesha manzil - bahria | Time: 05:00 PM | Fare: 600 | Seats Left: 30");
+    
     }
 
-    void ticket_booking(){
+//  2. Book Ticket
 
+    void ticket_booking(){
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter Schedules ID: ");
         Integer booking_id = sc.nextInt();
@@ -80,6 +158,8 @@ class methods extends bus_data{
         data.put(cus_name,new data(cus_name,booking_id));
     }
 
+//  3. Cancel Booking
+
     void cancel_booking(){
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter your name: ");
@@ -89,7 +169,12 @@ class methods extends bus_data{
         }
     }
 
+//  4. View My Bookings
+
     void display_info(){
+
+        // Name: yusra, Route: kda - gulshan, Time: 12:00 PM, Seats: 3, Total Fare: 2100
+
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter your name: ");
         String cus_name = sc.nextLine();
