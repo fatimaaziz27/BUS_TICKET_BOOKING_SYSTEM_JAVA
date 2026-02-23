@@ -93,6 +93,7 @@ class java_main{
             Scanner choice = new Scanner(System.in);
             System.out.println("Do you want to continue (yes/no)?");
             if (op.equals("No")){
+                System.out.print("====== Exiting Bus Ticket Booking System ======");
                 break;
             }
         }
@@ -148,6 +149,12 @@ class methods extends bus_data{
 //  2. Book Ticket
 
     void ticket_booking(){
+
+// Enter Bus ID to book: 2
+// Enter your name: yusra
+// Enter number of seats: 3
+// Booking successful! Total Fare: 2100
+
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter Schedules ID: ");
         Integer booking_id = sc.nextInt();
@@ -161,6 +168,10 @@ class methods extends bus_data{
 //  3. Cancel Booking
 
     void cancel_booking(){
+
+// Enter your name to cancel booking: yusra
+// Booking cancelled successfully!
+
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter your name: ");
         String cus_name = sc.nextLine();
