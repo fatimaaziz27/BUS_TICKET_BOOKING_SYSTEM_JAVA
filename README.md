@@ -1,6 +1,6 @@
-# 🚌 Bus Ticket Booking System (Java)
+# Bus Ticket Booking System (Java)
 
-## 📌 Project Overview
+## Project Overview
 The **Bus Ticket Booking System** is a console-based Java application that allows users to:
 
 - View available bus schedules  
@@ -12,9 +12,9 @@ The system is built using Object-Oriented Programming (OOP) concepts and uses a 
 
 ---
 
-## 🚀 Features
+## Features
 
-### 1️⃣ View Bus Schedules
+### View Bus Schedules
 Displays:
 - Bus ID  
 - Route  
@@ -22,7 +22,7 @@ Displays:
 - Fare  
 - Available Seats  
 
-### 2️⃣ Book Ticket
+### Book Ticket
 - Select Bus ID  
 - Enter customer name  
 - Enter number of seats  
@@ -30,38 +30,30 @@ Displays:
 - Seats are reduced after booking  
 - Booking is stored in HashMap  
 
-### 3️⃣ Cancel Booking
+### Cancel Booking
 - Enter customer name  
 - Booking is removed from the system  
 
-### 4️⃣ View My Bookings
+### View My Bookings
 - Enter customer name  
 - Displays booking details  
 
 ---
 
-## 🛠 Technologies Used
-- Java  
-- OOP (Classes & Objects)  
-- HashMap Collection  
-- Scanner Class  
+## Project Structure
 
----
-
-## 🧠 Project Structure
-
-### 🔹 main Class
+### main Class
 - Contains menu  
 - Controls program loop  
 - Handles user choices  
 
-### 🔹 booking_system Class
+### booking_system Class
 - Stores bus schedule data  
 - Handles ticket booking  
 - Handles cancellation  
 - Displays booking details  
 
-### 🔹 data Class
+### data Class
 Stores:
 - Bus ID  
 - Route  
@@ -71,16 +63,10 @@ Stores:
 
 ---
 
-## 📋 Available Bus Routes
+## Available Bus Routes
 
 | ID | Route                              | Time      | Fare |
 |----|-------------------------------------|-----------|------|
 | 1  | north nazimabad - power house       | 09:00 AM  | 500  |
 | 2  | kda - gulshan                      | 12:00 PM  | 700  |
 | 3  | ayesha manzil - bahria             | 05:00 PM  | 600  |
-
----
-
-## ▶ How to Run
-
-### Step 1: Compile
