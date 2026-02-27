@@ -102,6 +102,7 @@ class main{
     }
 }
 
+// child class -------->
 
 class data extends booking_system {
 
@@ -144,6 +145,8 @@ class data extends booking_system {
     }
 
 }
+
+// parent class -------->
 
 class booking_system{
 
