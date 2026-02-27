@@ -1,6 +1,7 @@
 import java.util.*;
 class main{
 
+// expected output --------->>
 
 // 0. Exit
 // 1. View Bus Schedules
@@ -65,6 +66,7 @@ class main{
     public static void main(String[] args){
 
         //  Enter your choice:
+
         booking_system b = new booking_system();
 
         while (true) {
@@ -111,6 +113,8 @@ class data extends booking_system {
     Integer seats;
     Integer total_fare;
 
+// constructor -------->
+    
     data(Integer id, String route, String time, Integer total_fare, Integer seats){
 
         this.id = id;
@@ -121,7 +125,8 @@ class data extends booking_system {
     }
 
     // Getter ------>
-
+    // optional
+    
     public Integer getid() {
         return id;
     }
@@ -141,25 +146,32 @@ class data extends booking_system {
 }
 
 class booking_system{
+
+    // hashmap for data storing ------>
+
     HashMap<String,booking_system> customer_details = new HashMap<>();
+    
+    // default values attributes --------->
+
+    // for route one
     Integer ID_i = 1;
     String route_i = "north nazimabad - power house";
     String time_i = "09:00 AM";
     Integer fare_i = 500;
     Integer seats_i = 50;
-
+    // for route two
     Integer ID_j = 2;
     String route_j = "kda - gulshan";
     String time_j= "12:00 PM";
     Integer fare_j = 700;
     Integer seats_j = 30;
-
+    // for route three
     Integer ID_k = 3;
     String route_k = "ayesha manzil - bahria";
     String time_k = "05:00 PM";
     Integer fare_k = 600;
     Integer seats_k = 60;
-
+    // calculation saving
     int total_fare;
 
 
@@ -184,6 +196,8 @@ class booking_system{
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter Bus ID: ");
         Integer booking_id = sc.nextInt();
+
+        // for route one
 
         if (booking_id == this.ID_i){
             sc.nextLine();
@@ -217,6 +231,8 @@ class booking_system{
             this.total_fare=0;
         }
 
+        // for route two
+
         else if (booking_id == this.ID_j){
             sc.nextLine();
             System.out.println("Enter your name: ");
@@ -247,6 +263,8 @@ class booking_system{
             customer_details.put(customer_name, new data(booking_id,route_j,time_j,total_fare,seat_num));
             this.total_fare=0;
         }
+
+    // for route three
 
         else if (booking_id == this.ID_k){
             sc.nextLine();
@@ -304,6 +322,7 @@ class booking_system{
     void View_My_Bookings(){
 
         // Name: yusra, Route: kda - gulshan, Time: 12:00 PM, Seats: 3, Total Fare: 2100
+        
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter your name: ");
         String cus_name = sc.nextLine();
